@@ -5,7 +5,6 @@
 # Curso de Node.js desde cero ❇️
 
 Curso para aprender **Node** de forma práctica
-**[Todos los jueves a las 18PM 🇪🇸 en Twitch](https://twitch.tv/midudev)**
 </div>
 
 ## 📹 Videos con las clases
@@ -18,11 +17,3 @@ Curso para aprender **Node** de forma práctica
 - 06: [Chat en TIEMPO REAL con Node.js, Socket.io, SQL, HTML y CSS](https://www.youtube.com/watch?v=WpbBhTx5R9Q&list=PLUofhDIg_38qm2oPOV-IRTTEKyrVBBaU7&index=6)
 - 07: [Aprende Autenticación de Usuario, Sesión, Cookies y JWT con Node.js](https://www.youtube.com/watch?v=UqnnhAZxRac&list=PLUofhDIg_38qm2oPOV-IRTTEKyrVBBaU7&index=7)
 
-## Horario por países:
-
-- 18H 🇪🇸
-- 17H 🇮🇨
-- 13H 🇺🇾 🇦🇷 🇨🇱
-- 12H 🇵🇾 🇹🇹 🇧🇴 🇻🇪 🇩🇴
-- 11H 🇨🇴 🇵🇪 🇪🇨 🇵🇦
-- 10H 🇲🇽 🇨🇷 🇳🇮 🇸🇻 🇭🇳
