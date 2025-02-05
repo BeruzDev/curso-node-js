@@ -7,8 +7,8 @@
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 const { readFile } = require ('node:fs/promises'); // <-- importamos el modulo de fs con promises
 // (            //* (...)       <-- envuelta en paréntesis para que no se confunda con un bloque de código
-//     () => {} //* () => {...} <-- función autoinvocada
-// )()          //* ()          <-- invocamos la función autoinvocada
+//     () => {} //* () => {...} <-- función auto invocada
+// )()          //* ()          <-- invocamos la función auto invocada
 
 //Función autoinvocada -> IIFE - Immediately Invoked Function Expression
 (                                                                       

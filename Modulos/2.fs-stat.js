@@ -3,7 +3,7 @@ const fs = require('node:fs')// a partir de Node 16, se recomienda poner 'node:'
 
 const stats = fs.statSync('./archivo.txt')
 
-//Sync -> síncrono
+//Sync -> sincronizado
 console.log(
     stats.isFile(), //si es un archivo
     stats.isDirectory(), //si es un directorio

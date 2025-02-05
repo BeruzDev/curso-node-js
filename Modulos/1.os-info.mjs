@@ -1,6 +1,6 @@
 import { platform, release, arch, cpus, freemem, totalmem, uptime } from 'node:os'; //comando + . para convertir en mjs
 
-console.log('Informacion del sistema operativo:');
+console.log('Información del sistema operativo:');
 console.log('----------------------------------');
 
 console.log('Nombre del sistema operativo', platform());

@@ -14,8 +14,8 @@ fs.readFile('./archivo2.txt', 'utf-8', (err, text) => {
     console.log('-->segundo texto \n', text);
 });
 
-//Sync -> síncrono
-//Leer un archivo de forma síncrona (secuencial, una linea tras otra)
+//Sync -> sincronizado
+//Leer un archivo de forma sincronizada (secuencial, una linea tras otra)
 /*console.log('Leyendo el primer archivo...');
 const text = fs.readFileSync('./archivo.txt', 'utf-8');
 
