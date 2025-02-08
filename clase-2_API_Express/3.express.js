@@ -10,6 +10,7 @@ const app = express()
 app.disable('x-powered-by') //<-desactiva la cabecera X-Powered-By	para que no se muestre en las respuestas
 
 app.use(express.json())
+
  // Middleware -> funciones que se ejecutan entre la petición y la respuesta
 // app.use((req, res, next) => {  //<- también se puede apuntar a un endpoint concreto -> app.use('/pokemon', (req, res, next) =>{
 //   if (req.method !== 'POST') return next()

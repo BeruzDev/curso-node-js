@@ -1,6 +1,7 @@
 <div align="center">
 
-# Curso Node.js 
+# Curso Node.js de la mano de MiduDev! 
+# Mil gracias Miguel Angel!!
 
 </div>
 
