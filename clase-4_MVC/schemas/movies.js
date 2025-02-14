@@ -1,4 +1,4 @@
-const z = require('zod') //<-- paquete npm para validar los tipos de datos recibidos
+import z from 'zod' //<-- paquete npm para validar los tipos de datos recibidos
 
 // Validar los tipos de datos con 'zod'
 // Creamos un esquema de los datos que vamos a recibir (json) y especificamos tipo de dato e introducimos un mensaje de error si es necesario
@@ -23,15 +23,11 @@ const movieSchema = z.object({
 		)
 })
 
-function validateMovie(object){
+export function validateMovie(object){
 	return movieSchema.safeParse(object) //<-- Safe parse devuelve un objeto resuelto y te dice si hay datos o no
 }
 
-function validationPartialMovie(object){
+export function validationPartialMovie(object){
 	return movieSchema.partial().safeParse(object)
 }
 
-module.exports = {
-	validateMovie,
-	validationPartialMovie
-}

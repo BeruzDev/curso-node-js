@@ -2,9 +2,10 @@
   "name": "clase-3_cors_api_rest",
   "version": "1.0.0",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "app": "node --watch app.js"
+    "app": "node app.js"
   },
   "keywords": [],
   "author": "",
