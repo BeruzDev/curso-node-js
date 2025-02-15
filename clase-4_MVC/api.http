@@ -13,13 +13,16 @@ GET http://localhost:1234/movies?director=Christopher Nolan
 ### Recuperar todas las películas por año
 GET http://localhost:1234/movies?year=2010
 
+### Borrar una película
+DELETE http://localhost:1234/movies/08f42b5c-ea64-4d8f-a4c8-f690a4cacbfa
+
 ### Crear una película con POST
 POST http://localhost:1234/movies
 Content-Type: application/json
 
 {
   "title": "Bertus Movie",
-  "year": 2025,
+  "year": 2024,
   "director": "Taco Castrini",
   "duration": 150,
   "poster": "https://m.media-amazon.com/images/I/91Rc8cAmnAL._AC_UF1000,1000_QL80_.jpg",
@@ -37,3 +40,4 @@ Content-Type: application/json
 {
   "year": 1994
 }
+
