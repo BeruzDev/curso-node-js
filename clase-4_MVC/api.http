@@ -22,7 +22,7 @@ Content-Type: application/json
 
 {
   "title": "Bertus Movie",
-  "year": 2024,
+  "year": 2023,
   "director": "Taco Castrini",
   "duration": 150,
   "poster": "https://m.media-amazon.com/images/I/91Rc8cAmnAL._AC_UF1000,1000_QL80_.jpg",
@@ -38,6 +38,6 @@ PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
 Content-Type: application/json
 
 {
-  "year": 1994
+  "year": 1995
 }
 
