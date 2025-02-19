@@ -1,7 +1,8 @@
 //* Distintos modelos para local, mongo y sql
 
-//import { MovieModel } from '../models/mongodb/movie.js'
-import { MovieModel } from '../models/local-file-system/movie.js'
+import { MovieModel } from '../models/mysql/movies.js'
+// import { MovieModel } from '../models/mongodb/movie.js'
+// import { MovieModel } from '../models/local-file-system/movie.js'
 import { validateMovie, validatePartialMovie } from '../schemas/movies.js'
 
 export class MovieController {
