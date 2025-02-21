@@ -1,6 +1,10 @@
 import mysql from 'mysql2/promise'
+import dotenv from 'dotenv'
 
-const config = {
+
+dotenv.config()
+
+const DEFAULT_CONFIG = {
   host: 'localhost',
   user: 'root',
   port: 3306,
@@ -8,7 +12,11 @@ const config = {
   database: 'moviesdb',
 }
 
-const connection = await mysql.createConnection(config)
+const connectionString = process.env.MYSQL_PUBLIC_URL //?? DEFAULT_CONFIG
+
+const connection = await mysql.createConnection(connectionString)
+
+console.log('✅ Conexión exitosa a MySQL')
 
 export class MovieModel {
   static async getAll({ genre }) {

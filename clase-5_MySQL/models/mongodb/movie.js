@@ -2,7 +2,6 @@ import { MongoClient, ObjectId, ServerApiVersion } from 'mongodb'
 const uri =
   'mongodb+srv://WmAdmin:YBefrIzzUchpQV7s@mydatabasedeployments.we2hp.mongodb.net/?retryWrites=true&w=majority&appName=MyDatabaseDeployments'
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -15,6 +14,7 @@ async function connect() {
   try {
     await client.connect()
     const database = client.db('database')
+    console.log('Connected to MongoDB')
     return database.collection('movies')
   } catch (error) {
     console.error('Error connecting to the database')

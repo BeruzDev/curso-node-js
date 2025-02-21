@@ -78,7 +78,7 @@ INSERT INTO movie_genres (movie_id, genre_id) VALUES
 ((SELECT id FROM movie WHERE title = 'Avatar'), (SELECT id FROM genre WHERE name = 'Adventure')),
 ((SELECT id FROM movie WHERE title = 'Avatar'), (SELECT id FROM genre WHERE name = 'Fantasy'));
     
-SELECT * FROM movie_genres;
+-- SELECT * FROM movie_genres;
 -- SELECT * FROM genre;
 -- SELECT movie.title, movie.year, movie.director, movie.duration, movie.poster, movie.rate, BIN_TO_UUID(movie.id) id FROM movie;
 -- SELECT id FROM movie WHERE title = 'Inception';
