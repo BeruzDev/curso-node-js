@@ -1,6 +1,9 @@
 import { MongoClient, ObjectId, ServerApiVersion } from 'mongodb'
-const uri =
-  'mongodb+srv://WmAdmin:YBefrIzzUchpQV7s@mydatabasedeployments.we2hp.mongodb.net/?retryWrites=true&w=majority&appName=MyDatabaseDeployments'
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+const uri = process.env.MONGODB_URI ?? 'http://localhost:1234'
 
 const client = new MongoClient(uri, {
   serverApi: {
@@ -13,7 +16,7 @@ const client = new MongoClient(uri, {
 async function connect() {
   try {
     await client.connect()
-    const database = client.db('database')
+    const database = client.db('movies_db')
     console.log('Connected to MongoDB')
     return database.collection('movies')
   } catch (error) {

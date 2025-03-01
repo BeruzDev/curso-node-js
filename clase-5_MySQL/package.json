@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:mysql": "node --watch server-with-mysql.js",
-    "start:mongo": "node --watch server-with-mongo.js",
-    "start:locale": "node --watch server-with-locale.js"
+    "mysql": "node --watch server-with-mysql.js",
+    "mongo": "node --watch server-with-mongo.js",
+    "locale": "node --watch server-with-locale.js"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +17,7 @@
     "cors": "2.8.5",
     "dotenv": "^16.4.7",
     "express": "4.21.2",
-    "mongodb": "6.13.0",
+    "mongodb": "^6.13.0",
     "mysql2": "^3.12.0",
     "zod": "3.24.2"
   },
