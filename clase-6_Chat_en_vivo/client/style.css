@@ -30,6 +30,15 @@ body {
   background-color: #1f2020;
 }
 
+#chat {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 350px;
+  height: 100%;
+  position: relative;
+}
+
 #messages {
   list-style-type: none;
   display: flex;
@@ -37,7 +46,14 @@ body {
   align-items: flex-start;
   padding: 0;
   margin: 8px;
+  overflow-y: scroll;
+  height: 100%;
+  scroll-behavior: smooth;
+  padding-bottom: 48px;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #2e2e2e;
 }
+
 
 #messages > li {
   display: inline-block;
@@ -52,13 +68,12 @@ body {
   background: #282828;
 }
 
-#chat {
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  overflow: hidden;
-  width: 350px;
-  height: 100%;
-  position: relative;
+#messages > li > p {
+  margin: 0;
+}
+
+#messages > li > small{
+  color: #b3afaf;
 }
 
 #form {

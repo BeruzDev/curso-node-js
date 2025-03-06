@@ -12,9 +12,7 @@ const port = process.env.PORT ?? 3000
 const app = express()
 const server = createServer(app)
 const io = new Server(server, {
-  connectionStateRecovery: {
-    maxDisconnectionDuration: {},
-  },
+  connectionStateRecovery: {},
 })
 
 const db_connection = createClient({
@@ -22,11 +20,12 @@ const db_connection = createClient({
   authToken: process.env.TURSO_AUTH_TOKEN,
 })
 
-// Comprobar la bbdd en TURSO
-// const db_structure = await db_connection.execute("PRAGMA table_info(message);");
-// console.log(db_structure);
+//const db_structure = await db_connection.execute("PRAGMA table_info(message);");
+//console.log(db_structure);
 
-// Eliminar la tabla message
+// const db_table_content = await db_connection.execute('SELECT * FROM message')
+// console.log(db_table_content)
+
 // await db_connection.execute(`
 //   DROP TABLE IF EXISTS message
 //   `)
@@ -34,7 +33,8 @@ const db_connection = createClient({
 await db_connection.execute(`
   CREATE TABLE IF NOT EXISTS message (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    content TEXT
+    content TEXT,
+    user TEXT
   )
 `)
 
@@ -47,28 +47,30 @@ io.on('connection', async (socket) => {
 
   socket.on('chat message', async (msg) => {
     let result
+    const username = socket.handshake.auth.username ?? 'anonymous'
+    console.log({ username })
     try {
       result = await db_connection.execute({
-        sql: `INSERT INTO message (content) VALUES (:msg)`,
-        args: { msg },
+        sql: `INSERT INTO message (content, user) VALUES (:msg, :username)`,
+        args: { msg, username },
       })
     } catch (error) {
       console.error(error)
       return
     }
 
-    io.emit('chat message', msg, result.lastInsertRowid.toString())
+    io.emit('chat message', msg, result.lastInsertRowid.toString(), username)
   })
 
-  if (!socket.recovered){
+  if (!socket.recovered) {
     try {
       const results = await db_connection.execute({
-        sql:`SELECT id, content FROM message WHERE id > ?`,
-        args: [socket.handshake.auth.serverOffset ?? 0]
+        sql: `SELECT id, content, user FROM message WHERE id > ?`,
+        args: [socket.handshake.auth.serverOffset ?? 0],
       })
 
-      results.rows.forEach(row => {
-        socket.emit('chat message', row.content, row.id.toString())
+      results.rows.forEach((row) => {
+        socket.emit('chat message', row.content, row.id.toString(), row.user)
       })
     } catch (error) {
       console.error(error)
