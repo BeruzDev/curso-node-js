@@ -5,26 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beruz-Chat</title>
     <link rel="stylesheet" href="style.css" />
-
-    <script type="module">
-      import { io } from 'https://cdn.socket.io/4.3.2/socket.io.esm.min.js'
-      const socket = io()
-
-      const form = document.getElementById('form')
-      const input = document.getElementById('input')
-
-      form.addEventListener('submit', (e) => {
-        e.preventDefault()
-
-        if (input.value) {
-          socket.emit('chat message', input.value)
-          input.value = ''
-        }
-      })
-    </script>
+    <link rel="favicon" href="favicon.ico" />
   </head>
   <body>
     <section id="chat">
+      <ul id="messages"></ul>
       <form id="form">
         <input
           type="text"
@@ -37,4 +22,6 @@
       </form>
     </section>
   </body>
+
+  <script src="index.js" type="module" defer></script>
 </html>
