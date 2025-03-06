@@ -25,6 +25,7 @@ body {
   display: grid;
   place-content: center;
   height: 100dvh;
+  width: 100dvw;
   padding: 36px;
   grid-template-rows: 1fr;
   background-color: #1f2020;
