@@ -13,7 +13,8 @@
   "license": "ISC",
   "packageManager": "pnpm@10.6.1",
   "dependencies": {
-    "db-local": "^3.1.0",
+    "bcrypt": "^5.1.1",
+    "db-local": "3.1.0",
     "dotenv": "16.4.7",
     "express": "4.21.2"
   },
@@ -22,5 +23,13 @@
   },
   "eslintConfig": {
     "extends": "standard"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "bcrypt"
+    ],
+    "onlyBuiltDependencies": [
+      "bcrypt"
+    ]
   }
 }
